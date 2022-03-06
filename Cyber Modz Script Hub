@@ -1,13 +1,12 @@
---Made By Cyber MoDz
-
---Beta
-
 if game.PlaceId == 1224212277 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Mad City Gui By Cyber MoDz", "BloodTheme")
 
 
-    -- MAIN
+    -- Mad City
+
+    -- Main
+
     local Main = Window:NewTab("Scripts")
     local MainSection = Main:NewSection("Main")
  
@@ -98,5 +97,227 @@ if game.PlaceId == 1224212277 then
 
     MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
         loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+end
+
+
+
+    --Dollhouse Roleplay
+
+    --Main
+
+    if game.PlaceId == 417267366 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Cyber MoDz", "BloodTheme")
+
+    local Main = Window:NewTab("Visualizer")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewButton("Verts Hub", "Verts Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VBH32/Verts-Hub/main/Source"))();
+    end)
+
+    MainSection:NewButton("LuciusWare", "LuciusWare (Dont have a own dupe)", function()
+        loadstring(game:HttpGet("https://nkware.000webhostapp.com/LWOWNED.lua"))();
+    end)
+
+    MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
+    end)
+
+    MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/BoomBox-Hub/main/Space-Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Kore's Hub", "The Close dont work", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
+    end)
+
+
+    --More
+
+    local More = Window:NewTab("More")
+    local MoreSection = More:NewSection("Main")
+
+    MoreSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+
+    MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+        loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+
+
+    MoreSection:NewButton("Tool Dupe", "Dupes 5 Tools", function()
+        repeat wait() until game.Players.LocalPlayer.Character
+    local Player = game:GetService("Players").LocalPlayer
+    local Mouse = Player:GetMouse()
+    local CKToggle = false
+    local KVToggle = false
+    local KAToggle = false
+    local function CreateInstance(Object,Properties)
+    local NewInstance = Instance.new(Object)
+    for i,v in pairs(Properties) do
+	NewInstance[i] = v
+    end
+	    return NewInstance
+    end
+
+    local MainGui = CreateInstance("ScreenGui", {Name = "MainGui", ResetOnSpawn = false, Enabled = true, Parent = game:GetService("Players").LocalPlayer.PlayerGui})
+    local MainFrame = CreateInstance("Frame", {Name = "MainFrame", Size = UDim2.new(0, 250, 0, 250), Position = UDim2.new(0.5, -125, 0.5, -125), BackgroundColor3 = Color3.fromRGB(50, 52, 49), BackgroundTransparency = 0, BorderSizePixel = 0, Parent = MainGui, Active = true, Draggable = true})    
+    local Notice = CreateInstance("TextLabel", {Name = "Notice", Text = "Made by Cyber MoDz", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(15, 15, 15), BackgroundTransparency = 1, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 0), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Boomboxes = CreateInstance("TextButton", {Name = "Boomboxes", Text = "Dupe Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 50), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Get = CreateInstance("TextButton", {Name = "Get", Text = "Get Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 70), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Drop = CreateInstance("TextButton", {Name = "Drop", Text = "Drop Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 90), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    Boomboxes.MouseButton1Down:Connect(function()
+    for i = 1, 5 do
+    for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if (v:IsA("Tool")) then
+    v.Parent = game.Players.LocalPlayer
+    end
+    end
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+    wait(7)
+    end
+    end)
+    Get.MouseButton1Down:Connect(function()
+    for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+    if (v:IsA("Tool")) then
+    v.Parent = game.Players.LocalPlayer.Backpack
+    end
+    end
+    end)
+    Drop.MouseButton1Down:Connect(function()
+    local oh1 = CFrame.new(5534.20166, 31.8015137, -17090.8145)
+    local oh2 = game:GetService("Players")
+    local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+    oh3.CFrame = oh1
+        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+         if v:IsA("Tool") then
+             v.Parent = game.Players.LocalPlayer.Character
+         end 
+        end
+    wait()
+  
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("Tool") then
+           v.Parent = game.Workspace.Terrain
+        end 
+      end
+
+         wait(3)
+         game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+        end)
+    end)
+end
+
+    --Free Boombox
+
+    --Main
+
+    if game.PlaceId == 6142500718 then
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Cyber MoDz", "BloodTheme")
+
+    local Main = Window:NewTab("Visualizer")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewButton("Verts Hub", "Verts Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VBH32/Verts-Hub/main/Source"))();
+    end)
+
+    MainSection:NewButton("LuciusWare", "LuciusWare (Dont have a own dupe)", function()
+        loadstring(game:HttpGet("https://nkware.000webhostapp.com/LWOWNED.lua"))();
+    end)
+
+    MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
+    end)
+
+    MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/BoomBox-Hub/main/Space-Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Kore's Hub", "The Close dont work", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
+    end)
+
+
+    --More
+
+    local More = Window:NewTab("More")
+    local MoreSection = More:NewSection("Main")
+
+    MoreSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+
+    MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+        loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+    end)
+
+
+    MoreSection:NewButton("Tool Dupe", "Dupes 5 Tools", function()
+        repeat wait() until game.Players.LocalPlayer.Character
+    local Player = game:GetService("Players").LocalPlayer
+    local Mouse = Player:GetMouse()
+    local CKToggle = false
+    local KVToggle = false
+    local KAToggle = false
+    local function CreateInstance(Object,Properties)
+    local NewInstance = Instance.new(Object)
+    for i,v in pairs(Properties) do
+	NewInstance[i] = v
+    end
+	    return NewInstance
+    end
+
+    local MainGui = CreateInstance("ScreenGui", {Name = "MainGui", ResetOnSpawn = false, Enabled = true, Parent = game:GetService("Players").LocalPlayer.PlayerGui})
+    local MainFrame = CreateInstance("Frame", {Name = "MainFrame", Size = UDim2.new(0, 250, 0, 250), Position = UDim2.new(0.5, -125, 0.5, -125), BackgroundColor3 = Color3.fromRGB(50, 52, 49), BackgroundTransparency = 0, BorderSizePixel = 0, Parent = MainGui, Active = true, Draggable = true})    
+    local Notice = CreateInstance("TextLabel", {Name = "Notice", Text = "Made by Cyber MoDz", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(15, 15, 15), BackgroundTransparency = 1, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 0), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Boomboxes = CreateInstance("TextButton", {Name = "Boomboxes", Text = "Dupe Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 50), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Get = CreateInstance("TextButton", {Name = "Get", Text = "Get Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 70), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    local Drop = CreateInstance("TextButton", {Name = "Drop", Text = "Drop Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 90), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
+    Boomboxes.MouseButton1Down:Connect(function()
+    for i = 1, 5 do
+    for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if (v:IsA("Tool")) then
+    v.Parent = game.Players.LocalPlayer
+    end
+    end
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+    wait(7)
+    end
+    end)
+    Get.MouseButton1Down:Connect(function()
+    for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
+    if (v:IsA("Tool")) then
+    v.Parent = game.Players.LocalPlayer.Backpack
+    end
+    end
+    end)
+    Drop.MouseButton1Down:Connect(function()
+    local oh1 = CFrame.new(5534.20166, 31.8015137, -17090.8145)
+    local oh2 = game:GetService("Players")
+    local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+    oh3.CFrame = oh1
+        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+         if v:IsA("Tool") then
+             v.Parent = game.Players.LocalPlayer.Character
+         end 
+        end
+    wait()
+  
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("Tool") then
+           v.Parent = game.Workspace.Terrain
+        end 
+      end
+
+         wait(3)
+         game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+        end)
     end)
 end
