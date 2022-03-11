@@ -212,6 +212,9 @@ end
     end)
 end
 
+
+
+
     --Free Boombox
 
     --Main
@@ -321,3 +324,77 @@ end
         end)
     end)
 end
+
+
+
+
+
+-- Build A Boat
+
+
+if game.PlaceId == 537413528 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Build A Boat Gui By Cyber MoDz", "BloodTheme")
+
+
+    -- Main
+
+    local Main = Window:NewTab("Scripts")
+    local MainSection = Main:NewSection("Main")
+ 
+    MainSection:NewButton("Vynixiu's Gui", "Auto farm fly and more...", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Build%20A%20Boat%20For%20Treasure/BABFT"))()
+    end)
+
+    MainSection:NewButton("V G Hub", "Auto farm and more...", function()
+        loadstring(game:HttpGet("loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/Build-A-Boat'))()"))()
+    end)
+
+    MainSection:NewButton("Auto Farm", "Auto farm", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/scripts/master/babft.lua"))()
+    end)
+
+    MainSection:NewButton("Auto Farm 2", "Auto farm", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/BoaHacker/ROBLOX/main/cheat', true))()
+    end)
+
+    MainSection:NewButton("Auto Farm 3 !sends a chat massege!", "Auto farm", function()
+        _G.autofarm = true
+        loadstring(game:HttpGet('https://gist.githubusercontent.com/cod2rx/d2a7e436d3af135d787529141e6485cc/raw/5bb4df0a94b0a3cf06f0c87a25cb6859e56d23e3/BABFT%2520Autofarm.lua'))()
+    end)
+
+    MainSection:NewButton("Black Purple Gui", "Auto farm (waiting for an update)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Toxic-Mods/KupcakeHubGames/main/BuildABoatGold", true))()
+    end)
+
+
+         -- PLAYER
+         local Player = Window:NewTab("Player")
+         local PlayerSection = Player:NewSection("Player")
+     
+            PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 500, 16, function(v)
+               game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+            end)
+     
+           PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+         end)
+    
+    
+    
+        --More
+    
+    
+        local More = Window:NewTab("More")
+        local MoreSection = More:NewSection("Main")
+    
+    
+        MoreSection:NewButton("infinite yield", "A Gui with fly noclip and more", function()
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+        end)
+    
+    
+        MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
+            loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
+        end)
+    end
