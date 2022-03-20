@@ -27,7 +27,12 @@ if game.PlaceId == 1224212277 then
     MainSection:NewButton("God Mode", "Gives you Godmode", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DevPuclo/Choupremev4.1/main/README.md",true))()
     end)
-    
+ 
+    MainSection:NewButton("One time Auto Rob", "Farmes you some cash $ ", function()
+        _G.MaxPlayers = 7
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisUsernameWasObfuscatedUsingPSUObf40A/Scripts/main/MadCityAutoRob"))()
+    end)
+   
     MainSection:NewButton("Auto Rob", "Farmes you some cash $ ", function()
         loadstring(game:HttpGet("https://system-exodus.com/scripts/madcity/MadLadsAR.lua",true))()
     end)
