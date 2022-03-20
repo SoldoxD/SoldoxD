@@ -1,6 +1,6 @@
 if game.PlaceId == 1224212277 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Mad City Gui By Cyber MoDz", "BloodTheme")
+    local Window = Library.CreateLib("Mad City Gui By Neko#4061", "BloodTheme")
 
 
     -- Mad City
@@ -108,7 +108,7 @@ end
 
     if game.PlaceId == 417267366 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Cyber MoDz", "BloodTheme")
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Neko#4061", "BloodTheme")
 
     local Main = Window:NewTab("Visualizer")
     local MainSection = Main:NewSection("Main")
@@ -221,7 +221,7 @@ end
 
     if game.PlaceId == 6142500718 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Cyber MoDz", "BloodTheme")
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By Neko#4061", "BloodTheme")
 
     local Main = Window:NewTab("Visualizer")
     local MainSection = Main:NewSection("Main")
@@ -334,7 +334,7 @@ end
 
 if game.PlaceId == 537413528 then
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Build A Boat Gui By Cyber MoDz", "BloodTheme")
+    local Window = Library.CreateLib("Build A Boat Gui By Neko#4061", "BloodTheme")
 
 
     -- Main
