@@ -153,68 +153,97 @@ end
         loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
     end)
 
+    --Anti
 
-    MoreSection:NewButton("Tool Dupe", "Dupes 5 Tools", function()
-        repeat wait() until game.Players.LocalPlayer.Character
-    local Player = game:GetService("Players").LocalPlayer
-    local Mouse = Player:GetMouse()
-    local CKToggle = false
-    local KVToggle = false
-    local KAToggle = false
-    local function CreateInstance(Object,Properties)
-    local NewInstance = Instance.new(Object)
-    for i,v in pairs(Properties) do
-	NewInstance[i] = v
-    end
-	    return NewInstance
-    end
+    local anti = Window:NewTab("Anti")
+    local antiSection = anti:NewSection("Main")
 
-    local MainGui = CreateInstance("ScreenGui", {Name = "MainGui", ResetOnSpawn = false, Enabled = true, Parent = game:GetService("Players").LocalPlayer.PlayerGui})
-    local MainFrame = CreateInstance("Frame", {Name = "MainFrame", Size = UDim2.new(0, 250, 0, 250), Position = UDim2.new(0.5, -125, 0.5, -125), BackgroundColor3 = Color3.fromRGB(50, 52, 49), BackgroundTransparency = 0, BorderSizePixel = 0, Parent = MainGui, Active = true, Draggable = true})    
-    local Notice = CreateInstance("TextLabel", {Name = "Notice", Text = "Made by Cyber MoDz", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(15, 15, 15), BackgroundTransparency = 1, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 0), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Boomboxes = CreateInstance("TextButton", {Name = "Boomboxes", Text = "Dupe Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 50), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Get = CreateInstance("TextButton", {Name = "Get", Text = "Get Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 70), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Drop = CreateInstance("TextButton", {Name = "Drop", Text = "Drop Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 90), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    Boomboxes.MouseButton1Down:Connect(function()
-    for i = 1, 5 do
-    for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if (v:IsA("Tool")) then
-    v.Parent = game.Players.LocalPlayer
+    antiSection:NewButton("Anti Fling", "Dont Get you flingt any more", function()
+        -- // Constants  --
+-- [ Services ] --
+local Services = setmetatable({}, {__index = function(Self, Index)
+    local NewService = game.GetService(game, Index)
+    if NewService then
+    Self[Index] = NewService
     end
+    return NewService
+    end})
+    
+    -- [ LocalPlayer ] --
+    local LocalPlayer = Services.Players.LocalPlayer
+    
+    -- // Functions  --
+    local function PlayerAdded(Player)
+       local Detected = false
+       local Character;
+       local PrimaryPart;
+    
+       local function CharacterAdded(NewCharacter)
+           Character = NewCharacter
+           repeat
+               wait()
+               PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+           until PrimaryPart
+           Detected = false
+       end
+    
+       CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+       Player.CharacterAdded:Connect(CharacterAdded)
+       Services.RunService.Heartbeat:Connect(function()
+           if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+               if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+                   if Detected == false then
+                       game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                           Text = "Fling Exploit detected, Player: " .. tostring(Player);
+                           Color = Color3.fromRGB(255, 200, 0);
+                       })
+                   end
+                   Detected = true
+                   for i,v in ipairs(Character:GetDescendants()) do
+                       if v:IsA("BasePart") then
+                           v.CanCollide = false
+                           v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                           v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                           v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                       end
+                   end
+                   PrimaryPart.CanCollide = false
+                   PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                   PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+               end
+           end
+       end)
     end
-    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
-    wait(7)
+    
+    -- // Event Listeners  --
+    for i,v in ipairs(Services.Players:GetPlayers()) do
+       if v ~= LocalPlayer then
+           PlayerAdded(v)
+       end
     end
+    Services.Players.PlayerAdded:Connect(PlayerAdded)
+    
+    local LastPosition = nil
+    Services.RunService.Heartbeat:Connect(function()
+       pcall(function()
+           local PrimaryPart = LocalPlayer.Character.PrimaryPart
+           if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+               PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+               PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+               PrimaryPart.CFrame = LastPosition
+    
+               game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                   Text = "You were flung. Neutralizing velocity.";
+                   Color = Color3.fromRGB(255, 0, 0);
+               })
+           elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+               LastPosition = PrimaryPart.CFrame
+           end
+       end)
     end)
-    Get.MouseButton1Down:Connect(function()
-    for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
-    if (v:IsA("Tool")) then
-    v.Parent = game.Players.LocalPlayer.Backpack
-    end
-    end
     end)
-    Drop.MouseButton1Down:Connect(function()
-    local oh1 = CFrame.new(5534.20166, 31.8015137, -17090.8145)
-    local oh2 = game:GetService("Players")
-    local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
-    oh3.CFrame = oh1
-        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-         if v:IsA("Tool") then
-             v.Parent = game.Players.LocalPlayer.Character
-         end 
-        end
-    wait()
-  
-    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        if v:IsA("Tool") then
-           v.Parent = game.Workspace.Terrain
-        end 
-      end
 
-         wait(3)
-         game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
-        end)
-    end)
 end
 
 
@@ -267,67 +296,7 @@ end
     end)
 
 
-    MoreSection:NewButton("Tool Dupe", "Dupes 5 Tools", function()
-        repeat wait() until game.Players.LocalPlayer.Character
-    local Player = game:GetService("Players").LocalPlayer
-    local Mouse = Player:GetMouse()
-    local CKToggle = false
-    local KVToggle = false
-    local KAToggle = false
-    local function CreateInstance(Object,Properties)
-    local NewInstance = Instance.new(Object)
-    for i,v in pairs(Properties) do
-	NewInstance[i] = v
-    end
-	    return NewInstance
-    end
 
-    local MainGui = CreateInstance("ScreenGui", {Name = "MainGui", ResetOnSpawn = false, Enabled = true, Parent = game:GetService("Players").LocalPlayer.PlayerGui})
-    local MainFrame = CreateInstance("Frame", {Name = "MainFrame", Size = UDim2.new(0, 250, 0, 250), Position = UDim2.new(0.5, -125, 0.5, -125), BackgroundColor3 = Color3.fromRGB(50, 52, 49), BackgroundTransparency = 0, BorderSizePixel = 0, Parent = MainGui, Active = true, Draggable = true})    
-    local Notice = CreateInstance("TextLabel", {Name = "Notice", Text = "Made by Cyber MoDz", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(15, 15, 15), BackgroundTransparency = 1, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 0), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Boomboxes = CreateInstance("TextButton", {Name = "Boomboxes", Text = "Dupe Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 50), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Get = CreateInstance("TextButton", {Name = "Get", Text = "Get Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 70), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    local Drop = CreateInstance("TextButton", {Name = "Drop", Text = "Drop Boomboxes", BorderSizePixel = 0, BackgroundColor3 = Color3.fromRGB(25, 25, 25), BackgroundTransparency = 0.8, Parent = MainFrame, TextSize = 18, Size = UDim2.new(1, 0, 0, 15), Position = UDim2.new(0, 0, 0, 90), Font = Enum.Font.SourceSansLight, TextColor3 = Color3.fromRGB(255, 255, 255)})
-    Boomboxes.MouseButton1Down:Connect(function()
-    for i = 1, 5 do
-    for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if (v:IsA("Tool")) then
-    v.Parent = game.Players.LocalPlayer
-    end
-    end
-    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
-    wait(7)
-    end
-    end)
-    Get.MouseButton1Down:Connect(function()
-    for _,v in pairs(game.Players.LocalPlayer:GetChildren()) do
-    if (v:IsA("Tool")) then
-    v.Parent = game.Players.LocalPlayer.Backpack
-    end
-    end
-    end)
-    Drop.MouseButton1Down:Connect(function()
-    local oh1 = CFrame.new(5534.20166, 31.8015137, -17090.8145)
-    local oh2 = game:GetService("Players")
-    local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
-    oh3.CFrame = oh1
-        for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-         if v:IsA("Tool") then
-             v.Parent = game.Players.LocalPlayer.Character
-         end 
-        end
-    wait()
-  
-    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-        if v:IsA("Tool") then
-           v.Parent = game.Workspace.Terrain
-        end 
-      end
-
-         wait(3)
-         game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
-        end)
-    end)
 end
 
 
