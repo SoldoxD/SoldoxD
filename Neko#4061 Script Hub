@@ -9,7 +9,9 @@ if game.PlaceId == 1224212277 then
 
     local Main = Window:NewTab("Scripts")
     local MainSection = Main:NewSection("Main")
- 
+
+
+
     MainSection:NewButton("Aimbot", "Helps your Aim", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
     end)
@@ -103,7 +105,21 @@ if game.PlaceId == 1224212277 then
     MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
         loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
     end)
-end
+
+    
+ 
+       --Option
+
+       local Option = Window:NewTab("Options")
+       local OptionSection = Option:NewSection("Main")
+   
+       OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+           Library:ToggleUI()
+       end)
+    end
+
+
+
 
 
 
@@ -114,6 +130,8 @@ end
     if game.PlaceId == 417267366 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
         local Window = Library.CreateLib("Boombox Visualizer Script Hub By Neko#4061", "BloodTheme")
+
+
 
     local Main = Window:NewTab("Visualizer")
     local MainSection = Main:NewSection("Main")
@@ -127,16 +145,33 @@ end
     end)
 
     MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/PineApple.lua",true))()
+    end)
+
+    MainSection:NewButton("Fanta Hub", "Fanta Hub LOL", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
     end)
 
     MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/BoomBox-Hub/main/Space-Hub.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Space-Hub.lua", true))()
     end)
 
     MainSection:NewButton("Kore's Hub", "The Close dont work", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
     end)
+
+    MainSection:NewButton("Ghost Hub", "Ghost Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Ghost%20Hub", true))()
+    end)
+
+    MainSection:NewButton("Decayeds Hub", "Decayeds Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Decayeds%20Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Cypher X", "Cypher X LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Cypher%20X.lua", true))()
+    end)
+
 
 
     --More
@@ -160,8 +195,8 @@ end
 
     antiSection:NewButton("Anti Fling", "Dont Get you flingt any more", function()
         -- // Constants  --
--- [ Services ] --
-local Services = setmetatable({}, {__index = function(Self, Index)
+    -- [ Services ] --
+    local Services = setmetatable({}, {__index = function(Self, Index)
     local NewService = game.GetService(game, Index)
     if NewService then
     Self[Index] = NewService
@@ -242,8 +277,45 @@ local Services = setmetatable({}, {__index = function(Self, Index)
            end
        end)
     end)
+ end)
+
+    antiSection:NewButton("Anti Crash", "Dont Get you kick or crashed any more", function()
+        local Players = game:GetService("Players")
+        local Workspace = game:GetService("Workspace")
+        
+        Workspace.DescendantRemoving:Connect(function(inst)
+            if inst:IsA("Motor6D") then
+                local Model = inst.Parent.Parent
+                if Model:IsA("Model") and Model:FindFirstChildOfClass("Humanoid") then
+                    for i,v in pairs(Model:GetChildren()) do
+                        if v:IsA("Accessory") and v:FindFirstChild("Handle") then
+                            local Cheque = v.Handle:FindFirstChildOfClass("WrapLayer")
+                            if Cheque then
+                                v:Destroy()
+                                --print("Destroyed possible crash attempt.")
+                            end
+                        end
+                    end
+                end
+            end
+        end)
     end)
 
+
+    antiSection:NewButton("Anti kill", "Dont Get you killed by exploiters any more", function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/PxMdTW15'),true))()
+    end)
+
+
+
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+    end)
 end
 
 
@@ -269,16 +341,33 @@ end
     end)
 
     MainSection:NewButton("Pineapple Hub", "Pineapple Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/PineApple.lua",true))()
+    end)
+
+    MainSection:NewButton("Fanta Hub", "Fanta Hub LOL", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/kyakuryc/fanta-hub/main/fanta_hub_raw.txt",true))()
     end)
 
     MainSection:NewButton("Space Hub", "!You need r6 avatar!  Space Hub takes a few moments to load", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/BoomBox-Hub/main/Space-Hub.lua", true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Space-Hub.lua", true))()
     end)
 
     MainSection:NewButton("Kore's Hub", "The Close dont work", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Kores%20Hub%20by%20unknown.txt", true))()
     end)
+
+    MainSection:NewButton("Ghost Hub", "Ghost Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SoldoxD/SoldoxD/main/Ghost%20Hub", true))()
+    end)
+
+    MainSection:NewButton("Decayeds Hub", "Decayeds Hub LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Decayeds%20Hub.lua", true))()
+    end)
+
+    MainSection:NewButton("Cypher X", "Cypher X LOL", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3JBH/Boombox-Scripts/7fcf88234a99a9d0f440975638e291c393d194fc/Cypher%20X.lua", true))()
+    end)
+
 
 
     --More
@@ -295,6 +384,17 @@ end
         loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
     end)
 
+
+
+    
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+    end)
 
 
 end
@@ -371,4 +471,16 @@ if game.PlaceId == 537413528 then
         MoreSection:NewButton("Dex", "Dex explorer is like roblox studio (you can see the code)", function()
             loadstring(game:HttpGet(('https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4'),true))()
         end)
-    end
+
+
+
+    
+       --Option
+
+    local Option = Window:NewTab("Options")
+    local OptionSection = Option:NewSection("Main")
+
+    OptionSection:NewKeybind("Toggle UI", "Set Key bind to toggle the UI", Enum.KeyCode.RightAlt, function()
+        Library:ToggleUI()
+    end)
+end
