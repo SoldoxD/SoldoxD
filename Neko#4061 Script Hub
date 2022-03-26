@@ -71,6 +71,13 @@ if game.PlaceId == 1224212277 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptRUs/Banana/main/BananaChicken.lua",true))()
     end)
 
+    GuisSection:NewButton("ECLIPSE X (key)", "A Good Gui by SYL#0011", function()
+        pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/ECLIPSEXHUB/ECLIPSE-X/main/ECLIPSE%20X.txt", true))()
+        end)
+    end)
+
+
 
 
 
