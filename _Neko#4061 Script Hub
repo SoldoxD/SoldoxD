@@ -136,7 +136,7 @@ if game.PlaceId == 1224212277 then
 
     if game.PlaceId == 417267366 then
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        local Window = Library.CreateLib("Boombox Visualizer Script Hub By:  By: _Neko#4061", "BloodTheme")
+        local Window = Library.CreateLib("Boombox Visualizer Script Hub By: _Neko#4061", "BloodTheme")
 
 
 
