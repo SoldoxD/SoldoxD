@@ -1,4 +1,4 @@
-script Hub by: _Neko#4061
+Script Hub by: _Neko#4061
 
 
 Supported Games:
