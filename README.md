@@ -1,4 +1,4 @@
-Cyber MoDz script Hub
+script Hub by: _Neko#4061
 
 
 Supported Games:
