@@ -23,7 +23,7 @@ if game.PlaceId == 1224212277 then
                 if asd.UserInputType == Enum.UserInputType.MouseButton1 then
                     for i,v in pairs(game.Workspace:GetChildren()) do
                         if v:FindFirstChild("Head") then
-                        for i = 1,0 do
+                        for i = 1,1 do
                         local args = {
                         [1] = "VR",
                         [2] = v.Head,
